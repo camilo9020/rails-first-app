@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180316011428) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "published"
     t.integer "user_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

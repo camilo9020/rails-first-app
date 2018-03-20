@@ -1,23 +1,30 @@
-<%= link_to 'Nuevo', new_product_path, class: 'btn-default'  %>
-
-<div class="panel panel-default">
-  <div class="panel-heading">Panel heading</div>
-   <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>price</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.name, product_path(product) %></td>
-        <td><%= product.description  %></td>
-        <td><%= product.price  %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+<div class="row">
+  <%= link_to 'Nuevo', new_product_path, class: 'btn btn-primary pull-right'  %>
 </div>
+
+<div class="row">
+  <div class="panel panel-default product-table">
+    <div class="panel-heading">
+      <h1 class="panel-title text-center">Products list</h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>price</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.name, product_path(product) %></td>
+          <td><%= product.description  %></td>
+          <td><%= product.price  %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
